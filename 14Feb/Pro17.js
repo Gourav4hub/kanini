@@ -14,7 +14,8 @@ var ob1 = {
 
 //var ob2 = ob1
 var ob2 = {
-    ...ob1, address : { ...ob1.address } , marks : [...ob1.marks]
+    ...ob1, address : { ...ob1.address } ,
+     marks : [...ob1.marks]
 }
 
 console.log(ob1)
