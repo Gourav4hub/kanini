@@ -23,4 +23,22 @@ ReactJS - it is a JS Library for managing UI and make a component based
 
     JSX : HTML + JS
 
+
+One-Way binding : Code to View
+                
+
+Actual DOM / Virtual DOM
+
+Change state >>> VirtualDOM >>> 
+
+
+
+
+
+
+
+
+
+
+
                         
