@@ -62,9 +62,9 @@ export default class Third extends React.Component
     render(){
         return <div>
             <h2>Third Component</h2>
-            {this.state.values.map(num=>
+            {this.state.values.map((num,index)=>
             {
-                return <h5>
+                return <h5 key={index}>
                     {num} : {num%2==0?"Even":"Odd"}
                 </h5>
             })}
