@@ -32,6 +32,17 @@ Actual DOM / Virtual DOM
 Change state >>> VirtualDOM >>> 
 
 
+App
+    First
+         ABC
+
+
+********************************************
+
+1. When user click on Delete , so you open a confirmation box.
+2. Empid and Phone and Email must be unique....
+
+
 
 
 

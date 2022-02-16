@@ -33,6 +33,13 @@ class App extends React.Component
         event.preventDefault()
     }
 
+    deleteEmployee = (empid)=>{
+        this.setState(
+          {
+          employees: this.state.employees.filter(ob=>ob.empid!=empid)
+          })
+    }
+
     render(){
         return <div>
             <h1>Employee Records</h1>
@@ -61,20 +68,25 @@ class App extends React.Component
                   <th>Phone</th>
                   <th>Email</th>
                   <th>Salary</th>
+                  <th>Operation</th>
                 </tr>
               </thead>
               <tbody>
                 {this.state.employees.map((emp,index)=>
-                {
-                  return <tr key={index}>
+                  <tr key={index}>
                       <td>{index+1}</td>
                       <td>{emp.empid}</td>
                       <td>{emp.name}</td>
                       <td>{emp.phone}</td>
                       <td>{emp.email}</td>
                       <td>{emp.salary}</td>
+                      <td>
+                        <button onClick={()=>this.deleteEmployee(emp.empid)}>
+                          Delete
+                          </button>
+                      </td>
                   </tr>
-                })}
+                )}
               </tbody>
             </table>
             <hr/>

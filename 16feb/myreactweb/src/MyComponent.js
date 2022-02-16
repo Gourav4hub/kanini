@@ -24,9 +24,24 @@ export class First extends React.Component
             <b>{this.state.title}</b>
             &nbsp;
             <button onClick={this.changeTitle}>Change</button>
+            <ABC data={this.state.title} />
+            <hr/>
+          
         </div>
     }
 }
+// Props : 
+class ABC extends React.Component
+{
+    render(){
+        return <div>
+            <h1>ABC Component</h1>
+            <b>{this.props.data}</b>
+        </div>
+    }
+}
+
+
 
 export class Second extends React.Component
 {
