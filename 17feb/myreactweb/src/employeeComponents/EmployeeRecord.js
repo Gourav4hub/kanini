@@ -1,7 +1,30 @@
 import React from 'react'
 import Employee from "./Employee";
-export default class EmployeeRecord extends React.Component {
+export default class EmployeeRecord extends React.Component 
+{
+    constructor(){
+        super()
+        console.log("Constructor Run ....... ")
+    }
+
+    componentDidMount(){
+        console.log("Component Did Mount Run ....... ")
+    }
+    componentWillUnmount(){
+        console.log("Component Will Unmount Run ....... ")
+    }
+
+    componentDidUpdate(){
+        console.log("Component Did Update Run ....... ")
+    }
+
+    shouldComponentUpdate(newProps,newState){
+        
+        return true
+    }
+
     render() {
+        console.log("Render Run ....... ")
         return <div>
             <h1>Employee Records</h1>
 
