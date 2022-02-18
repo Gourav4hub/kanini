@@ -58,7 +58,8 @@ class Menu extends React.Component
                           &nbsp; &nbsp;
                           <button onClick={()=>this.increase(p.product.pid)}>+</button>
                           <br/><br/>
-                          <b style={{color:'red'}}>{p.product.price*p.qty}</b>
+                          <b style={{color:'red'}}>
+                            {(p.product.price*p.qty).toFixed(3)}</b>
                         </th>
                         <th>
                             <button onClick={()=>this.deleteItem(p.product.pid)}>Delete</button>
