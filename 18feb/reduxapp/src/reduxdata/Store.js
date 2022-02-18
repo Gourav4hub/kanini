@@ -1,7 +1,14 @@
 import {createStore} from 'redux'
+import * as storage from './LocalStorage'
 
 import CartReducer from './reducers/CartReducer'
 
-const store = createStore(CartReducer)
+var stateData = storage.loadState()
+
+const store = createStore(CartReducer,stateData)
+
+store.subscribe(()=>{
+    storage.saveState(store.getState())
+})
 
 export default store
