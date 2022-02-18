@@ -26,10 +26,36 @@ export default class Category extends React.Component
     });
 
     }
+
+    componentDidMount(){
+        this.loadData()
+    }
+
+    save = (event)=>{
+        var cate_name = this.catebox.value
+        WebService.postRequest(urls.SAVE_CATEGORY,{cate_name})
+        .then(response=>response.json())
+        .then(data=>{
+           if(data.status)
+           {
+            alert('Category Saved')
+            this.setState({categories:[...this.state.categories,data.category]})
+        }else
+              alert('Category Not Saved')
+         })
+        .catch(err=>{
+    
+        });
+        event.preventDefault()
+    }
     render(){
         return <div>
             <h2>Category Component</h2>
-            <button onClick={this.loadData}>Load Category</button>
+            <form onSubmit={this.save}>
+            <input type="text" ref={c=>this.catebox=c} placeholder='Category NAme' required/>
+                &nbsp;&nbsp; 
+                <button type='submit'>Save</button>
+            </form>
             <hr/>
             {this.state.categories.map(cate=>{
                 return <div>
