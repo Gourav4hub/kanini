@@ -12,3 +12,26 @@ store.subscribe(()=>{
 })
 
 export default store
+
+
+/*
+
+import {createStore,combineReducers} from 'redux'
+
+import CartReducer from './reducers/CartReducer'
+
+
+const store = createStore(combineReducers({
+    carts : CartReducer,
+    users : UserReducer
+},
+{
+    carts : [],
+    users : {}
+}))
+
+
+
+*/
+
+
